@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OSI Model — H4CKSEC CCD</title>
+  <meta name="description" content="Detailed explanation of the OSI seven-layer reference model, layer responsibilities, PDUs and mapping to real-world protocols." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/jpeg" href="../../../../../../../../assets/images/ccd-logo.png" />
+  <link rel="stylesheet" href="../../../../../assets/css/main.css" />
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Open navigation">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+    <a href="../../../../../index.html" class="brand">
+      <img src="../../../../../assets/images/ccd-logo.png" alt="CYBER CLUB DIT" class="brand-logo-img" width="36" height="36" />
+      <div class="brand-text">
+        <span class="name">H4CK<span>SEC</span> CCD</span>
+        <span class="org">CYBER CLUB DIT</span>
+      </div>
+    </a>
+    <div class="header-search">
+      <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="search" id="headerSearch" placeholder="Search documentation…" />
+      <span class="kbd">⌘K</span>
+    </div>
+    <div class="header-actions">
+      <button class="icon-btn" id="searchBtn" aria-label="Search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="app-layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-inner">
+        <div class="sidebar-brand">
+          <img src="../../../../../assets/images/ccd-logo.png" alt="CYBER CLUB DIT" width="32" height="32" />
+          <div class="text">
+            <div class="name">H4CK<span>SEC</span> CCD</div>
+            <div class="org">CYBER CLUB DIT</div>
+          </div>
+        </div>
+
+        <div class="nav-section">
+          <div class="nav-section-title">Platform</div>
+          <a class="nav-item" href="../../../../../index.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            Home
+          </a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">Foundations</div>
+          <div class="nav-item expandable expanded" data-expand="nav-foundations">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            Fundamentals
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+          </div>
+          <div class="nav-children open" id="nav-foundations">
+            <a class="nav-item" href="../../../getting-started/index.html">Getting Started</a>
+            <div class="nav-item expandable expanded" data-expand="nav-networking">
+              Networking
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+            <div class="nav-children open" id="nav-networking">
+              <a class="nav-item" href="../../index.html">Overview</a>
+              <a class="nav-item active" href="./index.html">OSI Model</a>
+              <a class="nav-item" href="../tcp-ip/index.html">TCP/IP Model</a>
+              <a class="nav-item" href="../ipv4/index.html">IPv4 Addressing</a>
+              <a class="nav-item" href="../subnetting/index.html">Subnetting & CIDR</a>
+              <a class="nav-item" href="../dns/index.html">DNS</a>
+              <a class="nav-item" href="../dhcp/index.html">DHCP</a>
+              <a class="nav-item" href="../http-https/index.html">HTTP & HTTPS</a>
+              <a class="nav-item" href="../tls/index.html">TLS</a>
+              <a class="nav-item" href="../ports-sockets/index.html">Ports & Sockets</a>
+            </div>
+            <a class="nav-item" href="../../../linux/index.html">Linux Fundamentals</a>
+            <a class="nav-item" href="../../../cryptography/index.html">Cryptography</a>
+          </div>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">Offensive Security</div>
+          <div class="nav-item expandable" data-expand="nav-offensive">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Offensive
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+          </div>
+          <div class="nav-children" id="nav-offensive">
+            <a class="nav-item" href="../../../../offensive/reconnaissance/index.html">Reconnaissance</a>
+            <a class="nav-item" href="../../../../offensive/web-security/index.html">Web Application Security</a>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <main class="main">
+      <div class="main-content">
+        <nav class="breadcrumb">
+          <a href="../../../../../index.html">Home</a>
+          <span class="sep">/</span>
+          <a href="../../index.html">Networking</a>
+          <span class="sep">/</span>
+          <span>OSI Model</span>
+        </nav>
+
+        <header class="doc-header">
+          <h1>The OSI Model</h1>
+          <p class="desc">Seven-layer reference model for network communication. Layer responsibilities, protocol data units and mapping to real-world protocols.</p>
+          <div class="doc-meta">
+            <span class="badge badge-beginner">Beginner</span>
+            <span class="item">12 min read</span>
+            <span class="item">Updated November 2026</span>
+          </div>
+        </header>
+
+        <article class="doc-body">
+          <h2 id="definition">Definition</h2>
+          <p>The <strong>Open Systems Interconnection (OSI) model</strong> is a conceptual framework that standardizes the functions of a telecommunication or computing system into seven abstraction layers. It was developed by the International Organization for Standardization (ISO) to enable interoperable communication between different systems.</p>
+          <p>The OSI model is a <em>reference model</em> — it describes <em>what</em> each layer should do, not a specific implementation. Real networks primarily implement the TCP/IP model, but the OSI layers remain the standard vocabulary for discussing networking concepts, troubleshooting and security analysis.</p>
+
+          <h2 id="layers">The Seven Layers</h2>
+          <p>Layers are numbered from 1 (bottom, closest to the physical medium) to 7 (top, closest to the user application). Data moves down the stack on the sending host (encapsulation) and up the stack on the receiving host (decapsulation).</p>
+
+          <div class="diagram">
+            <pre class="mermaid">
+graph TB
+  L7["Layer 7 — Application<br/>HTTP, DNS, SMTP, SSH, FTP"]
+  L6["Layer 6 — Presentation<br/>Encryption, encoding, compression"]
+  L5["Layer 5 — Session<br/>Session establishment & management"]
+  L4["Layer 4 — Transport<br/>TCP, UDP — segments / datagrams"]
+  L3["Layer 3 — Network<br/>IP, ICMP, routing — packets"]
+  L2["Layer 2 — Data Link<br/>Ethernet, MAC, switches — frames"]
+  L1["Layer 1 — Physical<br/>Cables, signals, bits"]
+  L7 --> L6 --> L5 --> L4 --> L3 --> L2 --> L1
+  style L7 fill:#8B3DFF22,stroke:#8B3DFF
+  style L6 fill:#8B3DFF18,stroke:#8B3DFF
+  style L5 fill:#8B3DFF14,stroke:#8B3DFF
+  style L4 fill:#8B3DFF18,stroke:#8B3DFF
+  style L3 fill:#8B3DFF14,stroke:#8B3DFF
+  style L2 fill:#8B3DFF18,stroke:#8B3DFF
+  style L1 fill:#8B3DFF22,stroke:#8B3DFF
+            </pre>
+          </div>
+
+          <h3 id="l7">Layer 7 — Application</h3>
+          <p>Provides network services directly to end-user applications. This is where protocols that humans interact with live.</p>
+          <ul>
+            <li><strong>Examples:</strong> HTTP/HTTPS, DNS, SMTP, IMAP, FTP, SSH, SNMP, DHCP (client side)</li>
+            <li><strong>PDU:</strong> Data / Message</li>
+            <li><strong>Security relevance:</strong> Application-layer attacks (injection, XSS, command injection), application firewalls, API security</li>
+          </ul>
+
+          <h3 id="l6">Layer 6 — Presentation</h3>
+          <p>Responsible for data translation, encryption/decryption and compression. Ensures that data from the application layer of one system can be read by the application layer of another.</p>
+          <ul>
+            <li><strong>Examples:</strong> SSL/TLS (often discussed here or at Session), JPEG, ASCII/Unicode conversion, MIME</li>
+            <li><strong>PDU:</strong> Data</li>
+            <li><strong>Security relevance:</strong> Encryption, certificate validation, encoding attacks</li>
+          </ul>
+
+          <h3 id="l5">Layer 5 — Session</h3>
+          <p>Establishes, manages and terminates sessions between applications. Handles dialog control (full-duplex, half-duplex) and synchronization.</p>
+          <ul>
+            <li><strong>Examples:</strong> RPC, NetBIOS, PPTP, SIP session aspects</li>
+            <li><strong>PDU:</strong> Data</li>
+            <li><strong>Security relevance:</strong> Session hijacking, session fixation, token management</li>
+          </ul>
+
+          <h3 id="l4">Layer 4 — Transport</h3>
+          <p>Provides end-to-end communication services. Responsible for segmentation, reliability (or lack thereof), flow control and multiplexing via ports.</p>
+          <ul>
+            <li><strong>TCP</strong> — connection-oriented, reliable, ordered delivery, congestion control</li>
+            <li><strong>UDP</strong> — connectionless, unreliable, low overhead, used for DNS, VoIP, streaming</li>
+            <li><strong>PDU:</strong> Segment (TCP) / Datagram (UDP)</li>
+            <li><strong>Security relevance:</strong> Port scanning, TCP sequence prediction, SYN floods, UDP amplification</li>
+          </ul>
+
+          <div class="code-block">
+            <div class="code-header">
+              <span>bash</span>
+              <button class="copy-btn" type="button">Copy</button>
+            </div>
+            <pre><code># Viewing listening TCP/UDP sockets (Linux)
+ss -tulnp
+# or
+netstat -tulnp
+
+# Common TCP flags observed in packet captures
+# SYN, ACK, FIN, RST, PSH, URG</code></pre>
+          </div>
+
+          <h3 id="l3">Layer 3 — Network</h3>
+          <p>Handles logical addressing and routing of packets between different networks. The Internet Protocol (IP) is the dominant protocol at this layer.</p>
+          <ul>
+            <li><strong>Examples:</strong> IPv4, IPv6, ICMP, IGMP, IPSec, OSPF, BGP</li>
+            <li><strong>PDU:</strong> Packet</li>
+            <li><strong>Devices:</strong> Routers, Layer-3 switches</li>
+            <li><strong>Security relevance:</strong> IP spoofing, routing attacks, ICMP abuse, firewall rules based on IP/port</li>
+          </ul>
+
+          <h3 id="l2">Layer 2 — Data Link</h3>
+          <p>Provides node-to-node delivery on the same network segment. Handles framing, physical addressing (MAC), error detection and media access control.</p>
+          <ul>
+            <li><strong>Examples:</strong> Ethernet (IEEE 802.3), Wi-Fi (802.11), PPP, ARP (often placed at the boundary of L2/L3)</li>
+            <li><strong>PDU:</strong> Frame</li>
+            <li><strong>Devices:</strong> Switches, bridges, NICs</li>
+            <li><strong>Security relevance:</strong> MAC spoofing, ARP spoofing/poisoning, VLAN hopping, CAM table overflow</li>
+          </ul>
+
+          <h3 id="l1">Layer 1 — Physical</h3>
+          <p>Defines the electrical, optical and mechanical characteristics of the medium. Transmits raw bit streams.</p>
+          <ul>
+            <li><strong>Examples:</strong> Copper cables (Cat5e/6), fiber, radio frequencies, hubs, repeaters</li>
+            <li><strong>PDU:</strong> Bits</li>
+            <li><strong>Security relevance:</strong> Physical access, cable taps, jamming, hardware implants</li>
+          </ul>
+
+          <h2 id="encapsulation">Encapsulation & PDUs</h2>
+          <p>As data travels down the stack, each layer adds its own header (and sometimes trailer). The unit of data at each layer is called a <strong>Protocol Data Unit (PDU)</strong>:</p>
+          <ul>
+            <li>Application / Presentation / Session → Data</li>
+            <li>Transport → Segment (TCP) or Datagram (UDP)</li>
+            <li>Network → Packet</li>
+            <li>Data Link → Frame</li>
+            <li>Physical → Bits</li>
+          </ul>
+
+          <div class="callout tip">
+            <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></div>
+            <div class="content">
+              <strong>Tip</strong>
+              When analyzing packet captures (Wireshark, tcpdump), remember that what you see is the fully encapsulated frame. Filters and dissection views help you inspect individual layers.
+            </div>
+          </div>
+
+          <h2 id="mapping">Mapping to Real Protocols</h2>
+          <p>The table below shows common protocols and where they typically sit relative to the OSI model. Note that some protocols span multiple layers (especially TLS).</p>
+          <div class="code-block">
+            <div class="code-header"><span>text</span><button class="copy-btn" type="button">Copy</button></div>
+            <pre><code>Layer 7  Application     HTTP, DNS, SMTP, SSH, FTP, SNMP
+Layer 6  Presentation    TLS (crypto), MIME, encoding
+Layer 5  Session         RPC, NetBIOS, TLS session
+Layer 4  Transport       TCP, UDP, SCTP
+Layer 3  Network         IPv4, IPv6, ICMP, OSPF, BGP
+Layer 2  Data Link       Ethernet, 802.11, PPP, ARP
+Layer 1  Physical        Copper, Fiber, Radio</code></pre>
+          </div>
+
+          <h2 id="security">Security Implications</h2>
+          <p>Understanding the OSI model helps place attacks and defenses in the correct context:</p>
+          <ul>
+            <li><strong>L7:</strong> WAF, input validation, secure coding, application logging</li>
+            <li><strong>L4:</strong> Stateful firewalls, SYN cookies, rate limiting, port control</li>
+            <li><strong>L3:</strong> ACLs, anti-spoofing (uRPF), routing security (RPKI for BGP)</li>
+            <li><strong>L2:</strong> Port security, Dynamic ARP Inspection, DHCP snooping, 802.1X</li>
+            <li><strong>L1:</strong> Physical access controls, cable management, TEMPEST considerations</li>
+          </ul>
+
+          <div class="callout security">
+            <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <div class="content">
+              <strong>Security note</strong>
+              Many real-world attacks cross layers. A successful phishing email (L7 social engineering) can lead to credential theft that enables lateral movement at L3/L4. Always reason about the full path.
+            </div>
+          </div>
+
+          <h2 id="troubleshooting">Troubleshooting with OSI</h2>
+          <p>A common methodical approach is to start at Layer 1 and work upward (or start at the symptom and work down):</p>
+          <ol>
+            <li><strong>Physical:</strong> Is the link up? Cable, power, interface status?</li>
+            <li><strong>Data Link:</strong> MAC addresses correct? ARP resolution working? Switch port errors?</li>
+            <li><strong>Network:</strong> Correct IP, gateway, routes? Can you ping the next hop?</li>
+            <li><strong>Transport:</strong> Is the port open? Firewall blocking? TCP handshake completing?</li>
+            <li><strong>Application:</strong> Correct URL, DNS resolution, application logs, certificates?</li>
+          </ol>
+
+          <div class="code-block">
+            <div class="code-header"><span>bash</span><button class="copy-btn" type="button">Copy</button></div>
+            <pre><code># Quick layer-oriented checks (Linux)
+ip link show          # L1/L2 interface state
+ip addr show          # L3 addressing
+ip route              # L3 routing table
+ss -tuln              # L4 listening sockets
+dig +short example.com  # L7 DNS
+curl -v https://example.com  # L7 HTTP(S)</code></pre>
+          </div>
+
+          <h2 id="references">Official References</h2>
+          <ul>
+            <li>ISO/IEC 7498-1 — Information technology — Open Systems Interconnection — Basic Reference Model</li>
+            <li>RFC 1122 — Requirements for Internet Hosts — Communication Layers</li>
+            <li>Cisco — OSI Model documentation and troubleshooting guides</li>
+          </ul>
+        </article>
+
+        <nav class="doc-nav">
+          <a class="doc-nav-card" href="../../index.html">
+            <div class="label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg> Previous</div>
+            <div class="title">Networking Overview</div>
+          </a>
+          <a class="doc-nav-card next" href="../tcp-ip/index.html">
+            <div class="label">Next <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></div>
+            <div class="title">TCP/IP Model</div>
+          </a>
+        </nav>
+
+        <div class="related">
+          <h3>Related Articles</h3>
+          <div class="related-list">
+            <a class="related-item" href="../tcp-ip/index.html">TCP/IP Model</a>
+            <a class="related-item" href="../ipv4/index.html">IPv4 Addressing</a>
+            <a class="related-item" href="../ports-sockets/index.html">Ports & Sockets</a>
+            <a class="related-item" href="../dns/index.html">DNS Resolution</a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <aside class="toc" aria-label="Table of contents">
+      <div class="toc-title">On this page</div>
+      <a href="#definition" class="active">Definition</a>
+      <a href="#layers">The Seven Layers</a>
+      <a href="#l7" class="level-3">Application</a>
+      <a href="#l6" class="level-3">Presentation</a>
+      <a href="#l5" class="level-3">Session</a>
+      <a href="#l4" class="level-3">Transport</a>
+      <a href="#l3" class="level-3">Network</a>
+      <a href="#l2" class="level-3">Data Link</a>
+      <a href="#l1" class="level-3">Physical</a>
+      <a href="#encapsulation">Encapsulation & PDUs</a>
+      <a href="#mapping">Mapping to Real Protocols</a>
+      <a href="#security">Security Implications</a>
+      <a href="#troubleshooting">Troubleshooting with OSI</a>
+      <a href="#references">Official References</a>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-brand">
+      <img src="../../../../../assets/images/ccd-logo.png" alt="CYBER CLUB DIT" width="40" height="40" />
+      <div class="text">
+        <div class="name">H4CKSEC CCD</div>
+        <div class="org">CYBER CLUB DIT · Official Knowledge Base</div>
+      </div>
+    </div>
+    Documentation only · Educational use
+  </footer>
+
+  <div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true">
+    <div class="search-modal">
+      <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="search" id="modalSearch" placeholder="Search documentation…" autocomplete="off" />
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'dark',
+      themeVariables: {
+        primaryColor: '#8B3DFF',
+        primaryTextColor: '#F4F2FF',
+        primaryBorderColor: '#B17BFF',
+        lineColor: '#A09BB8',
+        secondaryColor: '#16182A',
+        tertiaryColor: '#10121C',
+        background: '#10121C',
+        mainBkg: '#16182A',
+        nodeBorder: '#8B3DFF',
+        clusterBkg: '#10121C',
+        titleColor: '#F4F2FF',
+        edgeLabelBackground: '#10121C'
+      }
+    });
+  </script>
+  <script src="../../../../../assets/js/main.js"></script>
+</body>
+</html>

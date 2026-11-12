@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Getting Started — H4CKSEC CCD</title>
+  <meta name="description" content="How to use the H4CKSEC cybersecurity knowledge base, recommended reading paths and documentation conventions." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/jpeg" href="../../../../assets/images/ccd-logo.png" />
+  <link rel="stylesheet" href="../../../assets/css/main.css" />
+</head>
+<body>
+  <header class="site-header">
+    <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Open navigation">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+    <a href="../../../index.html" class="brand">
+      <img src="../../../assets/images/ccd-logo.png" alt="CYBER CLUB DIT" class="brand-logo-img" width="36" height="36" />
+      <div class="brand-text">
+        <span class="name">H4CK<span>SEC</span> CCD</span>
+        <span class="org">CYBER CLUB DIT</span>
+      </div>
+    </a>
+    <div class="header-search">
+      <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="search" id="headerSearch" placeholder="Search documentation…" />
+      <span class="kbd">⌘K</span>
+    </div>
+    <div class="header-actions">
+      <button class="icon-btn" id="searchBtn" aria-label="Search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="app-layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-inner">
+        <div class="sidebar-brand">
+          <img src="../../../assets/images/ccd-logo.png" alt="CYBER CLUB DIT" width="32" height="32" />
+          <div class="text">
+            <div class="name">H4CK<span>SEC</span> CCD</div>
+            <div class="org">CYBER CLUB DIT</div>
+          </div>
+        </div>
+
+        <div class="nav-section">
+          <div class="nav-section-title">Platform</div>
+          <a class="nav-item" href="../../../index.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            Home
+          </a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">Foundations</div>
+          <div class="nav-item expandable expanded" data-expand="nav-foundations">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            Fundamentals
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+          </div>
+          <div class="nav-children open" id="nav-foundations">
+            <a class="nav-item active" href="../getting-started/index.html">Getting Started</a>
+            <div class="nav-item expandable" data-expand="nav-networking">
+              Networking
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+            <div class="nav-children" id="nav-networking">
+              <a class="nav-item" href="../networking/index.html">Overview</a>
+              <a class="nav-item" href="../networking/topics/osi-model/index.html">OSI Model</a>
+              <a class="nav-item" href="../networking/topics/tcp-ip/index.html">TCP/IP Model</a>
+              <a class="nav-item" href="../networking/topics/ipv4/index.html">IPv4 Addressing</a>
+              <a class="nav-item" href="../networking/topics/subnetting/index.html">Subnetting & CIDR</a>
+              <a class="nav-item" href="../networking/topics/dns/index.html">DNS</a>
+              <a class="nav-item" href="../networking/topics/dhcp/index.html">DHCP</a>
+              <a class="nav-item" href="../networking/topics/http-https/index.html">HTTP & HTTPS</a>
+            </div>
+            <a class="nav-item" href="../linux/index.html">Linux Fundamentals</a>
+            <a class="nav-item" href="../windows/index.html">Windows Fundamentals</a>
+            <a class="nav-item" href="../web/index.html">Web Fundamentals</a>
+            <a class="nav-item" href="../cryptography/index.html">Cryptography</a>
+          </div>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">Offensive Security</div>
+          <div class="nav-item expandable" data-expand="nav-offensive">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Offensive
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+          </div>
+          <div class="nav-children" id="nav-offensive">
+            <a class="nav-item" href="../../offensive/reconnaissance/index.html">Reconnaissance</a>
+            <a class="nav-item" href="../../offensive/web-security/index.html">Web Application Security</a>
+            <a class="nav-item" href="../../offensive/linux-privesc/index.html">Linux Privilege Escalation</a>
+          </div>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">References</div>
+          <a class="nav-item" href="../../references/tools/index.html">Security Tools</a>
+          <a class="nav-item" href="../../references/commands/index.html">Command Reference</a>
+        </div>
+      </div>
+    </aside>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <main class="main">
+      <div class="main-content">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../../../index.html">Home</a>
+          <span class="sep">/</span>
+          <a href="../getting-started/index.html">Foundations</a>
+          <span class="sep">/</span>
+          <span>Getting Started</span>
+        </nav>
+
+        <header class="doc-header">
+          <h1>Getting Started with H4CKSEC</h1>
+          <p class="desc">How to navigate the knowledge base, recommended learning paths and how articles are organized.</p>
+          <div class="doc-meta">
+            <span class="badge badge-beginner">Beginner</span>
+            <span class="item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              8 min read
+            </span>
+            <span class="item">Updated November 2026</span>
+          </div>
+        </header>
+
+        <article class="doc-body">
+          <h2 id="intro">Introduction</h2>
+          <p>H4CKSEC is a public cybersecurity knowledge base focused on technical notes, methodologies, tool references and conceptual explanations. It is intentionally <strong>not</strong> an LMS, CTF platform or lab environment. There are no challenges, flags, enrollments or progress tracking.</p>
+          <p>Content is written for students, enthusiasts and professionals who want clear, structured documentation similar in spirit to professional developer docs and well-organized technical knowledge bases.</p>
+
+          <div class="callout info">
+            <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+            <div class="content">
+              <strong>Info</strong>
+              Use the left sidebar to browse categories. On smaller screens the sidebar becomes a drawer. The search bar (or ⌘K / Ctrl+K) finds articles by title and keywords.
+            </div>
+          </div>
+
+          <h2 id="structure">Content Structure</h2>
+          <p>Articles are grouped into four top-level areas:</p>
+          <ul>
+            <li><strong>Foundations</strong> — Networking, Linux, Windows, Web, Programming and Cryptography fundamentals.</li>
+            <li><strong>Offensive Security</strong> — Reconnaissance, enumeration, web & network security testing, exploitation concepts, privilege escalation, post-exploitation and red team methodology.</li>
+            <li><strong>Defensive Security</strong> — Monitoring, network defense, endpoint security, vulnerability management, incident response, threat modeling and hardening.</li>
+            <li><strong>Technical References</strong> — Tools, command references, cheat sheets, methodologies and glossary.</li>
+          </ul>
+
+          <h2 id="difficulty">Difficulty Labels</h2>
+          <p>Every article carries a difficulty badge:</p>
+          <ul>
+            <li><span class="badge badge-beginner">Beginner</span> — assumes little prior security knowledge.</li>
+            <li><span class="badge badge-intermediate">Intermediate</span> — expects basic familiarity with the domain.</li>
+            <li><span class="badge badge-advanced">Advanced</span> — deeper technical detail, often building on intermediate material.</li>
+          </ul>
+
+          <h2 id="code">Code & Commands</h2>
+          <p>Commands and code snippets appear in highlighted terminal-style blocks. Use the copy button to copy the entire block.</p>
+
+          <div class="code-block">
+            <div class="code-header">
+              <span>bash</span>
+              <button class="copy-btn" type="button" aria-label="Copy code">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                Copy
+              </button>
+            </div>
+            <pre><code># Example: conceptual port scan (authorized targets only)
+nmap -sV -sC -oA scan_target 10.10.10.10
+
+# Always understand the flags before running tools
+# -sV : version detection
+# -sC : default scripts
+# -oA : output all formats</code></pre>
+          </div>
+
+          <div class="callout warn">
+            <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+            <div class="content">
+              <strong>Warning</strong>
+              Only run scanning or exploitation techniques against systems you own or have explicit written authorization to test. Unauthorized testing is illegal.
+            </div>
+          </div>
+
+          <h2 id="paths">Recommended Reading Paths</h2>
+          <h3>Absolute beginner</h3>
+          <ol>
+            <li>This page (Getting Started)</li>
+            <li>Networking Fundamentals → OSI Model → TCP/IP → IPv4 → Subnetting</li>
+            <li>Linux Fundamentals</li>
+            <li>Web Fundamentals</li>
+            <li>Then move into Offensive or Defensive sections based on interest</li>
+          </ol>
+          <h3>Already comfortable with networking & Linux</h3>
+          <ol>
+            <li>Web Application Security</li>
+            <li>Reconnaissance & Enumeration</li>
+            <li>Privilege Escalation (Linux / Windows)</li>
+            <li>Methodologies and Tools references</li>
+          </ol>
+
+          <h2 id="conventions">Documentation Conventions</h2>
+          <ul>
+            <li><strong>Info</strong> callouts provide additional context.</li>
+            <li><strong>Tip</strong> callouts highlight practical advice.</li>
+            <li><strong>Warning</strong> callouts flag legal or operational risks.</li>
+            <li><strong>Security note</strong> callouts focus on defensive implications.</li>
+            <li>Commands are shown with explanations of important flags.</li>
+            <li>Related articles appear at the bottom of each page.</li>
+          </ul>
+        </article>
+
+        <nav class="doc-nav" aria-label="Article navigation">
+          <a class="doc-nav-card" href="../../../index.html">
+            <div class="label">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+              Previous
+            </div>
+            <div class="title">Home</div>
+          </a>
+          <a class="doc-nav-card next" href="../networking/index.html">
+            <div class="label">
+              Next
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+            <div class="title">Networking Fundamentals</div>
+          </a>
+        </nav>
+
+        <div class="related">
+          <h3>Related Articles</h3>
+          <div class="related-list">
+            <a class="related-item" href="../networking/topics/osi-model/index.html">OSI Model</a>
+            <a class="related-item" href="../linux/index.html">Linux Fundamentals</a>
+            <a class="related-item" href="../../references/methodologies/index.html">Methodologies</a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <aside class="toc" aria-label="Table of contents">
+      <div class="toc-title">On this page</div>
+      <a href="#intro" class="active">Introduction</a>
+      <a href="#structure">Content Structure</a>
+      <a href="#difficulty">Difficulty Labels</a>
+      <a href="#code">Code & Commands</a>
+      <a href="#paths">Recommended Reading Paths</a>
+      <a href="#conventions">Documentation Conventions</a>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-brand">
+      <img src="../../../assets/images/ccd-logo.png" alt="CYBER CLUB DIT" width="40" height="40" />
+      <div class="text">
+        <div class="name">H4CKSEC CCD</div>
+        <div class="org">CYBER CLUB DIT · Official Knowledge Base</div>
+      </div>
+    </div>
+    Documentation only · Educational use
+  </footer>
+
+  <div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true">
+    <div class="search-modal">
+      <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="search" id="modalSearch" placeholder="Search documentation…" autocomplete="off" />
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>H4CKSEC CCD — Offensive Security Knowledge Platform | CYBER CLUB DIT</title>
+  <meta name="description" content="H4CKSEC CCD is the official cybersecurity knowledge base of CYBER CLUB DIT. Technical notes, methodologies, tools and references for students and professionals." />
+  <link rel="icon" type="image/png" href="assets/images/ccd-logo.png" />
+  <link rel="apple-touch-icon" href="assets/images/ccd-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body>
+  <header class="site-header">
+    <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Open navigation">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+    <a href="index.html" class="brand">
+      <img src="assets/images/ccd-logo.jpeg" alt="CYBER CLUB DIT" class="brand-logo-img" width="36" height="36" />
+      <div class="brand-text">
+        <span class="name">H4CK<span>SEC</span> CCD</span>
+        <span class="org">CYBER CLUB DIT</span>
+      </div>
+    </a>
+    <div class="header-search">
+      <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="search" id="headerSearch" placeholder="Search documentation…" aria-label="Search" />
+      <span class="kbd">⌘K</span>
+    </div>
+    <div class="header-actions">
+      <button class="icon-btn" id="searchBtn" aria-label="Search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="app-layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-inner">
+        <div class="sidebar-brand">
+          <img src="assets/images/ccd-logo.png" alt="CYBER CLUB DIT" width="32" height="32" />
+          <div class="text">
+            <div class="name">H4CK<span>SEC</span> CCD</div>
+            <div class="org">CYBER CLUB DIT</div>
+          </div>
+        </div>
+
+        <div class="nav-section">
+          <div class="nav-section-title">Platform</div>
+          <a class="nav-item active" href="index.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            Home
+          </a>
+        </div>
+
+        <div class="nav-section">
+          <div class="nav-section-title">Foundations</div>
+          <div class="nav-item expandable" data-expand="nav-foundations">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            Fundamentals
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+          </div>
+          <div class="nav-children" id="nav-foundations">
+            <a class="nav-item" href="modules/foundations/getting-started/index.html">Getting Started</a>
+            <div class="nav-item expandable" data-expand="nav-networking">
+              Networking
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+            <div class="nav-children" id="nav-networking">
+              <a class="nav-item" href="modules/foundations/networking/index.html">Overview</a>
+              <a class="nav-item" href="modules/foundations/networking/topics/osi-model/index.html">OSI Model</a>
+              <a class="nav-item" href="modules/foundations/networking/topics/tcp-ip/index.html">TCP/IP Model</a>
+              <a class="nav-item" href="modules/foundations/networking/topics/ipv4/index.html">IPv4 Addressing</a>
+              <a class="nav-item" href="modules/foundations/networking/topics/subnetting/index.html">Subnetting & CIDR</a>
+              <a class="nav-item" href="modules/foundations/networking/topics/dns/index.html">DNS</a>
+              <a class="nav-item" href="modules/foundations/networking/topics/dhcp/index.html">DHCP</a>
+              <a class="nav-item" href="modules/foundations/networking/topics/http-https/index.html">HTTP & HTTPS</a>
+              <a class="nav-item" href="modules/foundations/networking/topics/tls/index.html">TLS</a>
+              <a class="nav-item" href="modules/foundations/networking/topics/ports-sockets/index.html">Ports & Sockets</a>
+            </div>
+            <a class="nav-item" href="modules/foundations/linux/index.html">Linux Fundamentals</a>
+            <a class="nav-item" href="modules/foundations/windows/index.html">Windows Fundamentals</a>
+            <a class="nav-item" href="modules/foundations/web/index.html">Web Fundamentals</a>
+            <a class="nav-item" href="modules/foundations/programming/index.html">Programming Fundamentals</a>
+            <a class="nav-item" href="modules/foundations/cryptography/index.html">Cryptography</a>
+          </div>
+        </div>
+
+        <div class="nav-section">
+          <div class="nav-section-title">Offensive Security</div>
+          <div class="nav-item expandable" data-expand="nav-offensive">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Offensive
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+          </div>
+          <div class="nav-children" id="nav-offensive">
+            <a class="nav-item" href="modules/offensive/reconnaissance/index.html">Reconnaissance</a>
+            <a class="nav-item" href="modules/offensive/enumeration/index.html">Enumeration</a>
+            <a class="nav-item" href="modules/offensive/web-security/index.html">Web Application Security</a>
+            <a class="nav-item" href="modules/offensive/network-security/index.html">Network Security Testing</a>
+            <a class="nav-item" href="modules/offensive/vulnerability-assessment/index.html">Vulnerability Assessment</a>
+            <a class="nav-item" href="modules/offensive/exploitation/index.html">Exploitation Concepts</a>
+            <a class="nav-item" href="modules/offensive/linux-privesc/index.html">Linux Privilege Escalation</a>
+            <a class="nav-item" href="modules/offensive/windows-privesc/index.html">Windows Privilege Escalation</a>
+            <a class="nav-item" href="modules/offensive/post-exploitation/index.html">Post-Exploitation</a>
+            <a class="nav-item" href="modules/offensive/red-team/index.html">Red Team Methodology</a>
+          </div>
+        </div>
+
+        <div class="nav-section">
+          <div class="nav-section-title">Defensive Security</div>
+          <div class="nav-item expandable" data-expand="nav-defensive">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Defensive
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+          </div>
+          <div class="nav-children" id="nav-defensive">
+            <a class="nav-item" href="modules/defensive/monitoring/index.html">Security Monitoring</a>
+            <a class="nav-item" href="modules/defensive/network-defense/index.html">Network Defense</a>
+            <a class="nav-item" href="modules/defensive/endpoint/index.html">Endpoint Security</a>
+            <a class="nav-item" href="modules/defensive/vuln-management/index.html">Vulnerability Management</a>
+            <a class="nav-item" href="modules/defensive/incident-response/index.html">Incident Response</a>
+            <a class="nav-item" href="modules/defensive/threat-modeling/index.html">Threat Modeling</a>
+            <a class="nav-item" href="modules/defensive/hardening/index.html">Security Hardening</a>
+          </div>
+        </div>
+
+        <div class="nav-section">
+          <div class="nav-section-title">Technical References</div>
+          <a class="nav-item" href="modules/references/tools/index.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            Security Tools
+          </a>
+          <a class="nav-item" href="modules/references/commands/index.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+            Command Reference
+          </a>
+          <a class="nav-item" href="modules/references/cheat-sheets/index.html">Cheat Sheets</a>
+          <a class="nav-item" href="modules/references/methodologies/index.html">Methodologies</a>
+          <a class="nav-item" href="modules/references/glossary/index.html">Glossary</a>
+        </div>
+      </div>
+    </aside>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <main class="main">
+      <div class="main-content">
+        <section class="hero">
+          <div class="hero-identity">
+            <img src="assets/images/ccd-logo.png" alt="CYBER CLUB DIT — Official Logo" class="hero-logo" width="120" height="120" />
+            <div class="platform-name">H4CK<span>SEC</span> CCD</div>
+            <div class="org-name">CYBER CLUB DIT</div>
+          </div>
+          <div class="hero-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Official Knowledge Base
+          </div>
+          <h1>Cybersecurity <span>Technical Documentation</span></h1>
+          <p>Structured notes, methodologies and references from CYBER CLUB DIT. Documentation-first platform for students, enthusiasts and security professionals.</p>
+          <div class="hero-search">
+            <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <input type="search" id="heroSearch" placeholder="Search notes, tools, techniques…" aria-label="Search knowledge base" />
+          </div>
+        </section>
+
+        <h2 class="section-title">Main Categories</h2>
+        <div class="cat-grid">
+          <a class="cat-card" href="modules/foundations/networking/index.html">
+            <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+            <h3>Networking Fundamentals</h3>
+            <p>OSI, TCP/IP, addressing, subnetting, DNS, DHCP, routing and more.</p>
+          </a>
+          <a class="cat-card blue" href="modules/offensive/web-security/index.html">
+            <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></div>
+            <h3>Web Application Security</h3>
+            <p>OWASP concepts, injection, authentication flaws and modern defenses.</p>
+          </a>
+          <a class="cat-card green" href="modules/foundations/linux/index.html">
+            <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+            <h3>Linux Fundamentals</h3>
+            <p>Shell, permissions, processes, networking utilities and hardening.</p>
+          </a>
+          <a class="cat-card gold" href="modules/offensive/linux-privesc/index.html">
+            <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <h3>Privilege Escalation</h3>
+            <p>Linux & Windows privesc techniques, enumeration and common paths.</p>
+          </a>
+          <a class="cat-card" href="modules/foundations/cryptography/index.html">
+            <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+            <h3>Cryptography</h3>
+            <p>Symmetric, asymmetric, hashing, TLS and common implementation pitfalls.</p>
+          </a>
+          <a class="cat-card blue" href="modules/references/tools/index.html">
+            <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+            <h3>Security Tools</h3>
+            <p>Curated directory of common tools with usage notes and references.</p>
+          </a>
+        </div>
+
+        <h2 class="section-title">Featured Documentation <span class="count">6</span></h2>
+        <div class="article-grid">
+          <a class="article-card" href="modules/foundations/getting-started/index.html">
+            <div class="meta"><span class="badge badge-beginner">Beginner</span><span class="read-time">8 min</span></div>
+            <h3>Getting Started with H4CKSEC CCD</h3>
+            <p>How to navigate the knowledge base, recommended reading order and article structure.</p>
+            <div class="footer">Updated Nov 2026</div>
+          </a>
+          <a class="article-card" href="modules/foundations/networking/topics/osi-model/index.html">
+            <div class="meta"><span class="badge badge-beginner">Beginner</span><span class="read-time">12 min</span></div>
+            <h3>The OSI Model</h3>
+            <p>Seven-layer reference model, responsibilities of each layer and practical mapping to real protocols.</p>
+            <div class="footer">Updated Nov 2026</div>
+          </a>
+          <a class="article-card" href="modules/foundations/networking/topics/subnetting/index.html">
+            <div class="meta"><span class="badge badge-intermediate">Intermediate</span><span class="read-time">18 min</span></div>
+            <h3>Subnetting & CIDR</h3>
+            <p>Binary conversion, subnet masks, CIDR notation, VLSM and practical addressing examples.</p>
+            <div class="footer">Updated Nov 2026</div>
+          </a>
+          <a class="article-card" href="modules/foundations/networking/topics/dns/index.html">
+            <div class="meta"><span class="badge badge-intermediate">Intermediate</span><span class="read-time">14 min</span></div>
+            <h3>DNS Resolution</h3>
+            <p>How DNS works, record types, resolution process and security considerations.</p>
+            <div class="footer">Updated Nov 2026</div>
+          </a>
+          <a class="article-card" href="modules/offensive/web-security/index.html">
+            <div class="meta"><span class="badge badge-intermediate">Intermediate</span><span class="read-time">16 min</span></div>
+            <h3>Web Application Security Overview</h3>
+            <p>Core concepts behind common web risks and how to reason about them systematically.</p>
+            <div class="footer">Updated Oct 2026</div>
+          </a>
+          <a class="article-card" href="modules/foundations/linux/index.html">
+            <div class="meta"><span class="badge badge-beginner">Beginner</span><span class="read-time">14 min</span></div>
+            <h3>Linux Permissions & Ownership</h3>
+            <p>chmod, chown, SUID/SGID, sticky bit and practical permission models.</p>
+            <div class="footer">Updated Sep 2026</div>
+          </a>
+        </div>
+
+        <h2 class="section-title">Recently Updated</h2>
+        <div class="article-grid">
+          <a class="article-card" href="modules/foundations/networking/topics/tcp-ip/index.html">
+            <div class="meta"><span class="badge badge-beginner">Beginner</span><span class="read-time">10 min</span></div>
+            <h3>TCP/IP Model</h3>
+            <p>Four-layer internet model and how it maps to the OSI reference model.</p>
+            <div class="footer">Nov 10, 2026</div>
+          </a>
+          <a class="article-card" href="modules/foundations/networking/topics/dhcp/index.html">
+            <div class="meta"><span class="badge badge-beginner">Beginner</span><span class="read-time">9 min</span></div>
+            <h3>DHCP & the DORA Process</h3>
+            <p>Dynamic Host Configuration Protocol, lease process and common options.</p>
+            <div class="footer">Nov 8, 2026</div>
+          </a>
+          <a class="article-card" href="modules/offensive/reconnaissance/index.html">
+            <div class="meta"><span class="badge badge-intermediate">Intermediate</span><span class="read-time">11 min</span></div>
+            <h3>Reconnaissance Techniques</h3>
+            <p>Passive and active information gathering in an authorized testing context.</p>
+            <div class="footer">Nov 5, 2026</div>
+          </a>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-brand">
+      <img src="assets/images/ccd-logo.png" alt="CYBER CLUB DIT" width="40" height="40" />
+      <div class="text">
+        <div class="name">H4CKSEC CCD</div>
+        <div class="org">CYBER CLUB DIT · Official Knowledge Base</div>
+      </div>
+    </div>
+    Documentation only · Educational use · No labs or CTFs
+  </footer>
+
+  <nav class="mobile-nav" aria-label="Mobile navigation">
+    <a href="index.html" class="active">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      Home
+    </a>
+    <a href="modules/foundations/networking/index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg>
+      Network
+    </a>
+    <a href="modules/offensive/web-security/index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Offensive
+    </a>
+    <a href="modules/references/tools/index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+      Tools
+    </a>
+  </nav>
+
+  <div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Search">
+    <div class="search-modal">
+      <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="search" id="modalSearch" placeholder="Search documentation…" autocomplete="off" />
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

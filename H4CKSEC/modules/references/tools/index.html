@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tools — H4CKSEC CCD</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/jpeg" href="../../../assets/images/ccd-logo.png" />
+  <link rel="stylesheet" href="../../../assets/css/main.css" />
+</head>
+<body>
+  <header class="site-header">
+    <button class="icon-btn menu-toggle" id="menuToggle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    <a href="../../../index.html" class="brand">
+      <img src="../../../assets/images/ccd-logo.png" alt="CYBER CLUB DIT" class="brand-logo-img" width="36" height="36" />
+      <div class="brand-text">
+        <span class="name">H4CK<span>SEC</span> CCD</span>
+        <span class="org">CYBER CLUB DIT</span>
+      </div>
+    </a>
+    <div class="header-search"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg><input type="search" id="headerSearch" placeholder="Search…" /><span class="kbd">⌘K</span></div>
+    <div class="header-actions"><button class="icon-btn" id="searchBtn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></button></div>
+  </header>
+  <div class="app-layout">
+    <aside class="sidebar" id="sidebar"><div class="sidebar-inner">
+        <div class="sidebar-brand">
+          <img src="../../../assets/images/ccd-logo.png" alt="CYBER CLUB DIT" width="32" height="32" />
+          <div class="text">
+            <div class="name">H4CK<span>SEC</span> CCD</div>
+            <div class="org">CYBER CLUB DIT</div>
+          </div>
+        </div>
+
+      <div class="nav-section"><div class="nav-section-title">Platform</div><a class="nav-item" href="../../../index.html">Home</a></div>
+      <div class="nav-section"><div class="nav-section-title">Modules</div>
+        <a class="nav-item" href="../../../modules/foundations/networking/index.html">Networking</a>
+        <a class="nav-item" href="../../../modules/foundations/linux/index.html">Linux</a>
+        <a class="nav-item" href="../../../modules/offensive/web-security/index.html">Web Security</a>
+        <a class="nav-item" href="../../../modules/references/tools/index.html">Tools</a>
+      </div>
+    </div></aside>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <main class="main"><div class="main-content">
+      <nav class="breadcrumb"><a href="../../../index.html">Home</a><span class="sep">/</span><span>Tools</span></nav>
+      <header class="doc-header">
+        <h1>Tools</h1>
+        <p class="desc">Module landing page for Tools in the H4CKSEC knowledge base.</p>
+        <div class="doc-meta"><span class="badge badge-beginner">Beginner</span></div>
+      </header>
+      <article class="doc-body">
+        <p>This module is part of the H4CKSEC structured documentation. Content follows the same depth and style as the Networking / OSI Model article: definitions, explanations, commands, callouts, security implications and related links.</p>
+        <div class="callout tip">
+          <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/></svg></div>
+          <div class="content"><strong>Expand this module</strong> Add nested topic pages under this folder following the pattern used in <code>modules/foundations/networking/topics/</code>.</div>
+        </div>
+      </article>
+    </div></main>
+  </div>
+  <footer class="site-footer">
+    <div class="footer-brand">
+      <img src="../../../assets/images/ccd-logo.png" alt="CYBER CLUB DIT" width="40" height="40" />
+      <div class="text">
+        <div class="name">H4CKSEC CCD</div>
+        <div class="org">CYBER CLUB DIT · Official Knowledge Base</div>
+      </div>
+    </div>
+    Documentation only · Educational use
+  </footer>
+  <div class="search-overlay" id="searchOverlay"><div class="search-modal"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg><input type="search" id="modalSearch" placeholder="Search…" /><div class="search-results" id="searchResults"></div></div></div>
+  <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

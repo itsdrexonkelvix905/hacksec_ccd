@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Subnetting — H4CKSEC CCD</title>
+  <meta name="description" content="Technical notes on Subnetting for the H4CKSEC cybersecurity knowledge base." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/jpeg" href="../../../../../assets/images/ccd-logo.png" />
+  <link rel="stylesheet" href="../../../../../assets/css/main.css" />
+</head>
+<body>
+  <header class="site-header">
+    <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    <a href="../../../../../index.html" class="brand">
+      <img src="../../../../../assets/images/ccd-logo.png" alt="CYBER CLUB DIT" class="brand-logo-img" width="36" height="36" />
+      <div class="brand-text">
+        <span class="name">H4CK<span>SEC</span> CCD</span>
+        <span class="org">CYBER CLUB DIT</span>
+      </div>
+    </a>
+    <div class="header-search"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg><input type="search" id="headerSearch" placeholder="Search…" /><span class="kbd">⌘K</span></div>
+    <div class="header-actions"><button class="icon-btn" id="searchBtn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></button></div>
+  </header>
+  <div class="app-layout">
+    <aside class="sidebar" id="sidebar"><div class="sidebar-inner">
+        <div class="sidebar-brand">
+          <img src="../../../../../assets/images/ccd-logo.png" alt="CYBER CLUB DIT" width="32" height="32" />
+          <div class="text">
+            <div class="name">H4CK<span>SEC</span> CCD</div>
+            <div class="org">CYBER CLUB DIT</div>
+          </div>
+        </div>
+
+      <div class="nav-section"><div class="nav-section-title">Platform</div><a class="nav-item" href="../../../../../index.html">Home</a></div>
+      <div class="nav-section"><div class="nav-section-title">Networking</div>
+        <a class="nav-item" href="../../index.html">Overview</a>
+        <a class="nav-item" href="../osi-model/index.html">OSI Model</a>
+        <a class="nav-item" href="../tcp-ip/index.html">TCP/IP Model</a>
+        <a class="nav-item" href="../ipv4/index.html">IPv4</a>
+        <a class="nav-item" href="../subnetting/index.html">Subnetting</a>
+        <a class="nav-item" href="../dns/index.html">DNS</a>
+        <a class="nav-item" href="../dhcp/index.html">DHCP</a>
+        <a class="nav-item" href="../http-https/index.html">HTTP & HTTPS</a>
+      </div>
+    </div></aside>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <main class="main"><div class="main-content">
+      <nav class="breadcrumb"><a href="../../../../../index.html">Home</a><span class="sep">/</span><a href="../../index.html">Networking</a><span class="sep">/</span><span>Subnetting</span></nav>
+      <header class="doc-header">
+        <h1>Subnetting</h1>
+        <p class="desc">Technical documentation for Subnetting within the H4CKSEC knowledge base.</p>
+        <div class="doc-meta"><span class="badge badge-beginner">Beginner</span><span class="item">In progress</span></div>
+      </header>
+      <article class="doc-body">
+        <div class="callout info">
+          <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+          <div class="content"><strong>Content expansion</strong> This page is part of the structured Networking module. The full technical article (definition, how it works, commands, security implications and related topics) follows the same depth and style as the OSI Model page. Expand with the same pattern: clear definition, step-by-step explanation, command examples, callouts and related links.</div>
+        </div>
+        <p>See the <a href="../osi-model/index.html">OSI Model</a> article for the reference style and depth expected across all Networking topics.</p>
+        <h2>Related</h2>
+        <ul>
+          <li><a href="../osi-model/index.html">OSI Model</a></li>
+          <li><a href="../../index.html">Networking Overview</a></li>
+        </ul>
+      </article>
+      <nav class="doc-nav">
+        <a class="doc-nav-card" href="../../index.html"><div class="label">Previous</div><div class="title">Networking Overview</div></a>
+        <a class="doc-nav-card next" href="../osi-model/index.html"><div class="label">Next</div><div class="title">OSI Model</div></a>
+      </nav>
+    </div></main>
+  </div>
+  <footer class="site-footer">
+    <div class="footer-brand">
+      <img src="../../../../../assets/images/ccd-logo.png" alt="CYBER CLUB DIT" width="40" height="40" />
+      <div class="text">
+        <div class="name">H4CKSEC CCD</div>
+        <div class="org">CYBER CLUB DIT · Official Knowledge Base</div>
+      </div>
+    </div>
+    Documentation only · Educational use
+  </footer>
+  <div class="search-overlay" id="searchOverlay"><div class="search-modal"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg><input type="search" id="modalSearch" placeholder="Search…" /><div class="search-results" id="searchResults"></div></div></div>
+  <script src="../../../../../assets/js/main.js"></script>
+</body>
+</html>
